@@ -1,0 +1,107 @@
+/* Wedding Wings Marriage Bureau & Senior Matrimonial Consultant Portfolio */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdfbf7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9d2240;
+  border-radius: 4px;
+  border: 2px solid #fdfbf7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #751c33;
+}
+
+/* Enhanced Header Nav Styling */
+#mainHeader nav a {
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+#mainHeader nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #be3253;
+  transition: width 0.25s ease;
+  border-radius: 2px;
+}
+
+#mainHeader nav a:hover::after {
+  width: 100%;
+}
+
+/* Glassmorphism Card Effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(229, 176, 34, 0.3);
+}
+
+/* Proposal Transition */
+.proposal-card {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.proposal-card.hidden-card {
+  display: none !important;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* Active Filter Button Animation */
+.filter-btn {
+  transition: all 0.2s ease-in-out;
+}
+
+.filter-btn.active {
+  background-color: #871e38 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(135, 30, 56, 0.25);
+}
+
+/* Floating WhatsApp Pulse Animation */
+@keyframes softPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.floating-whatsapp {
+  animation: softPulse 2.5s infinite;
+}
+
+/* Print Styles */
+@media print {
+  header, footer, .floating-whatsapp, #biodataForm button {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+}
